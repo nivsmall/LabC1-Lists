@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <string.h>
-#include "command_functions.h"
-
+#include "input_handling_functions.h"
 
 int input_command_from_user(char command[])
 {
@@ -98,9 +97,7 @@ int pop_element_from_string(char command[], int* idx)
 
 	while (prune_whitespace(command, *idx))
 	{
-		printf("%d\n", *idx);
 		--*idx;
-		printf("%d\n", *idx);
 	}
 	
 	if (!extract_numstring(command, element_str, idx))
@@ -120,33 +117,11 @@ int pop_element_from_string(char command[], int* idx)
 	return element;
 }
 
-_Bool index_is_inbound(cell* iter, int idx)
+/*void exit_program(char error_message[], cell* head_)
 {
-	cell* prev = NULL;
-	int count = 0;
-	while (iter != NULL)
-	{
-		prev = iter;
-		iter = iter->next;
-		++count;
-	}
-	if (idx >= count) {return 0;}
-	else { return 1; }
-}
-
-void free_list(cell* head)
-{
-	if (head == NULL)
-		return;
-
-	free_list(head->next);
-	free(head);
-}
-
-void exit_program(cell* head, char error_message)
-{
-	printf(error_message);
-	free_list(head);
+	printf("not");
+	free_list(NULL);
 	exit(1);
 }
-
+*/
+///cell* head, char error_message[]

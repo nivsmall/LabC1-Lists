@@ -139,13 +139,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="command_functions.c" />
+    <ClCompile Include="linked_lists_functions.c" />
     <ClCompile Include="main.c" />
-    <ClCompile Include="supporting_functions.c" />
+    <ClCompile Include="input_handling_functions.c" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="command_functions.h" />
-    <ClInclude Include="supproting_function.h" />
+    <ClInclude Include="linked_lists_functions.h" />
+    <ClInclude Include="input_handling_functions.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="cpp.hint" />

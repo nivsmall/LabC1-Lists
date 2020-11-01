@@ -18,19 +18,19 @@
     <ClCompile Include="main.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="command_functions.c">
+    <ClCompile Include="linked_lists_functions.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="supporting_functions.c">
+    <ClCompile Include="input_handling_functions.c">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="command_functions.h">
-      <Filter>Source Files</Filter>
+    <ClInclude Include="linked_lists_functions.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="supproting_function.h">
-      <Filter>Source Files</Filter>
+    <ClInclude Include="input_handling_functions.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

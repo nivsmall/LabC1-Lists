@@ -1,7 +1,8 @@
 #pragma once
-#ifndef SUPPORTING_FUNCTIONS_H
-#define SUPPORTING_FUNCTIONS_H
-#include "command_functions.h"
+#ifndef INPUT_HANDLING_FUNCTIONS_H
+#define INPUT_HANDLING_FUNCTIONS_H
+#include "linked_lists_functions.h"
+
 
 int input_command_from_user(char command[]);
 
@@ -17,11 +18,5 @@ _Bool extract_numstring(char command[], char element_str[], int* idx);
 
 int pop_element_from_string(char command[], int* idx);
 
-_Bool index_is_inbound(cell* iter, int idx);
-
-void free_list(cell* head);
-
-void exit_program(cell* head, char error_message)
-
-
+//void exit_program(char error_message[], cell* head_);
 #endif;

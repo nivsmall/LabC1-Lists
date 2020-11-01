@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "command_functions.h"
+#include "linked_lists_functions.h"
 
 cell* create_cell(int new_data) //maybe delet all this
 {
@@ -80,32 +80,31 @@ cell* add_cell_after(cell* head, int new_data, int insert_after_int) {
 	return head;
 }
 
-cell* delete_cell(cell* head, int value_to_delete) {
+cell* delete_cell(cell* head, int index_to_delete) {
 	cell* iter = head;
 	cell* prev = NULL;
+	int i = 0;
 
 	if (head == NULL)// maybe delete, need only when memory allocted failed
 	{
 		return NULL;
 	}
-	if (head->data == value_to_delete)
+	if (index_to_delete == 0)
 	{
 		iter = head->next;
 		free(head);
 		return iter;
 	}
+	else
+	{	
+		for(i; i<index_to_delete; ++i)
+		{
 
-	while (iter != NULL)
-	{
-		if (iter->data == value_to_delete) {
-			prev->next = iter->next;
-			free(iter);
-			break;
+			prev = iter;
+			iter = iter->next;
 		}
-		prev = iter;
-		iter = iter->next;
-
-
+		prev->next = iter->next;
+		free(iter);
 	}
 	return head;
 }
@@ -143,4 +142,27 @@ void print_list(cell* head)// modified from https://www.opentechguides.com/how-t
 		current_cell = current_cell->next;
 	}
 	printf("]\n");
+}
+
+_Bool index_is_inbound(cell* iter, int idx)
+{
+	cell* prev = NULL;
+	int count = 0;
+	while (iter != NULL)
+	{
+		prev = iter;
+		iter = iter->next;
+		++count;
+	}
+	if (idx >= count) { return 0; }
+	else { return 1; }
+}
+
+void free_list(cell* head)
+{
+	if (head == NULL)
+		return;
+
+	free_list(head->next);
+	free(head);
 }
